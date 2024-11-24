@@ -3,6 +3,7 @@ body{margin: 0px; padding: 0px;
   background-repeat: no-repeat;
   background-size: 100%;
   font-family: calibri;
+  display: flex;
 }
 
 
@@ -10,7 +11,7 @@ body{margin: 0px; padding: 0px;
   width: 100%;
   height: 100%;
   position: absolute;
-
+  flex-grow:1;
 
 }
 
