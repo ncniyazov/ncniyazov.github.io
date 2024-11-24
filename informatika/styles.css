@@ -3,6 +3,8 @@ html, body, .grid-container {
     margin-left: 25;
     background-color: lightblue;
     position: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #header {
@@ -61,6 +63,8 @@ footer {
 
 .grid-container {
     display: grid;
+    flex-grow: 1;
+    flex-basis: 200;
     position: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -70,14 +74,20 @@ footer {
 
 .İnformatika-1 {
     grid-area: İnformatika-1;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika-2 {
     grid-area: İnformatika-2;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika-3 {
     grid-area: İnformatika-3;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---4 {
@@ -87,35 +97,51 @@ footer {
     gap: 10px 0px;
     grid-template-areas: ". . ." ". . .";
     grid-area: İnformatika---4;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---5 {
     grid-area: İnformatika---5;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---6 {
     grid-area: İnformatika---6;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---7 {
     grid-area: İnformatika---7;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---8 {
     grid-area: İnformatika---8;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---9 {
     grid-area: İnformatika---9;
     position: center;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---10 {
     grid-area: İnformatika---10;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .İnformatika---11 {
     grid-area: İnformatika---11;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 /* For presentation only, no need to copy the code below */
@@ -123,6 +149,8 @@ footer {
 .grid-container * {
     border: 1px solid rgb(219, 214, 214);
     position: relative;
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .grid-container *:after {
@@ -130,4 +158,6 @@ footer {
     position: center;
     top: 0;
     left: 0;
+    flex-grow: 1;
+    flex-basis: 200;
 }
