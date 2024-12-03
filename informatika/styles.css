@@ -1,163 +1,82 @@
-html, body, .grid-container {
-    height: 40%;
-    margin-left: 25;
-    background-color: lightblue;
-    position: center;
-    display: flex;
-    flex-wrap: wrap;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #e6f7ff, #b3d9ff);
+  color: #333;
+}
+
+/* Header */
 #header {
-    border: 1px solid #b5b7ba;
-    background-color: rgb(89, 143, 161);
-    min-width: 1220px;
-    height: 40px;
-    gap: 20px 30px;
-    text-align: center;
-    padding-top: 18px;
+  background-color: #0275d8;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
 }
 
-#header #selected {
-    color: #000;
+#header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-#center {
-    width: 1280px;
-    margin: 0 auto;
-}
-#bas_blok {
-    align-items: center;
-    margin: 0 auto;
-    gap: 20px 30px;
+#header nav a:hover {
+  text-decoration: underline;
 }
 
-#header a {
-    color: #4d4d4d;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: left;
-    text-decoration: none;
-    height: 30px;
-    line-height: 30px;
-    display: inline-block;
-}
-
-#header span {
-    padding: 0 38px;
-}
-
-footer {
-    min-height: 140px;
-    line-height: 140px;
-    background-color: #434445;
-    color: #a4a4a4;
-    font-size: 20px;
-    font-style: italic;
-    text-align: center;
-}
-
-#footer a {
-    color: inherit;
-}
-
-
+/* Grid Container */
 .grid-container {
-    display: grid;
-    flex-grow: 1;
-    flex-basis: 200;
-    position: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px 30px;
-    grid-template-areas: "İnformatika-1 İnformatika-2 İnformatika-3 İnformatika---4" "İnformatika---5 İnformatika---6 İnformatika---7 İnformatika---8" "İnformatika---9 İnformatika---10 İnformatika---11 .";
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
-.İnformatika-1 {
-    grid-area: İnformatika-1;
-    flex-grow: 1;
-    flex-basis: 200;
+.grid-container div {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.İnformatika-2 {
-    grid-area: İnformatika-2;
-    flex-grow: 1;
-    flex-basis: 200;
+.grid-container div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.İnformatika-3 {
-    grid-area: İnformatika-3;
-    flex-grow: 1;
-    flex-basis: 200;
+.grid-container img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.İnformatika---4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px 0px;
-    grid-template-areas: ". . ." ". . .";
-    grid-area: İnformatika---4;
-    flex-grow: 1;
-    flex-basis: 200;
+/* Footer */
+footer {
+  background-color: #444;
+  color: #ddd;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 0.9em;
 }
 
-.İnformatika---5 {
-    grid-area: İnformatika---5;
-    flex-grow: 1;
-    flex-basis: 200;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  #header nav a {
+    font-size: 1em;
+  }
 
-.İnformatika---6 {
-    grid-area: İnformatika---6;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.İnformatika---7 {
-    grid-area: İnformatika---7;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.İnformatika---8 {
-    grid-area: İnformatika---8;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.İnformatika---9 {
-    grid-area: İnformatika---9;
-    position: center;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.İnformatika---10 {
-    grid-area: İnformatika---10;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.İnformatika---11 {
-    grid-area: İnformatika---11;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-/* For presentation only, no need to copy the code below */
-
-.grid-container * {
-    border: 1px solid rgb(219, 214, 214);
-    position: relative;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-
-.grid-container *:after {
-    content: attr(class);
-    position: center;
-    top: 0;
-    left: 0;
-    flex-grow: 1;
-    flex-basis: 200;
+  footer {
+    font-size: 0.8em;
+  }
 }
