@@ -12,27 +12,50 @@
     body, html {
       font-family: 'Poppins', sans-serif;
     }
-    nav { display: flex; gap: 8px; align-items: center; }
-    .dropdown { display: inline-block; position: relative; cursor: pointer; }
-    .dropdown span { display: inline-block; }
+    nav { display: flex; gap: 8px; align-items: center; position: relative; }
+    .dropdown { display: inline-block; position: relative; cursor: pointer; padding: 4px 6px; border-radius: 4px; }
+    .dropdown span { display: inline-block; padding-right: 18px; }
+    .dropdown span::after { content: '▾'; margin-left: 8px; font-size: 0.8em; opacity: 0.9; }
     .dropdown .dropdown-list {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity .22s ease, transform .22s ease, visibility .22s;
       position: absolute;
-      top: 100%;
+      top: calc(100% + 6px);
       left: 0;
       background: #0275d8; /* match header */
       list-style: none;
-      margin: 6px 0 0;
+      margin: 0;
       padding: 6px 0;
       border: 1px solid #0262b0;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       min-width: 220px;
       z-index: 100;
+      pointer-events: none;
+      border-radius: 6px;
     }
-    .dropdown .dropdown-list li { padding: 6px 12px; white-space:nowrap; }
+    .dropdown .dropdown-list li { padding: 6px 12px; white-space: nowrap; }
     .dropdown .dropdown-list li a { color: #fff; text-decoration: none; display: block; }
-    .dropdown:hover .dropdown-list, .dropdown:focus-within .dropdown-list { display: block; }
+    .dropdown:hover .dropdown-list, .dropdown.open .dropdown-list, .dropdown:focus-within .dropdown-list {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
     .dropdown .dropdown-list li a:hover { background: rgba(0,0,0,0.08); }
+
+    @media (max-width: 768px) {
+      .dropdown .dropdown-list {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%) translateY(6px);
+        top: 80px;
+        min-width: 280px;
+        width: calc(100% - 40px);
+        border-radius: 8px;
+      }
+    }
   </style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -57,7 +80,7 @@
       <a href="https://m2288.github.io/"><b>Əsas Səhifə</b><em> (Alternativ)</em></a>
       <span>/</span>
       <div class="dropdown">
-        <span><b>Onlayn Python İntepretatoru</b></span>
+        <span tabindex="0"><b>Onlayn Python İntepretatoru</b></span>
         <ul class="dropdown-list">
           <li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Programiz — Online Compiler</a></li>
           <li><a href="https://toolpix.pythonanywhere.com/free-online-ai-python-compiler" target="_blank">ToolPix — AI Python Compiler</a></li>
@@ -138,3 +161,23 @@
   </footer>
 </body>
 </html>
+
+<script>
+  (function(){
+    var dd = document.querySelector('.dropdown');
+    if(!dd) return;
+    // toggle on click/tap
+    dd.addEventListener('click', function(e){
+      this.classList.toggle('open');
+      e.stopPropagation();
+    });
+    // close when clicking outside
+    document.addEventListener('click', function(){
+      dd.classList.remove('open');
+    });
+    // close on escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') dd.classList.remove('open');
+    });
+  })();
+</script>
