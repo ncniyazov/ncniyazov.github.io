@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,13 +10,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body, html {
+    body,
+    html {
       font-family: 'Poppins', sans-serif;
     }
-    nav { display: flex; gap: 8px; align-items: center; position: relative; }
-    .dropdown { display: inline-block; position: relative; cursor: pointer; padding: 4px 6px; border-radius: 4px; }
-    .dropdown span { display: inline-block; padding-right: 18px; }
-    .dropdown span::after { content: '▾'; margin-left: 8px; font-size: 0.8em; opacity: 0.9; }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      position: relative;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+
+    .dropdown span {
+      display: inline-block;
+      padding-right: 18px;
+    }
+
+    .dropdown span::after {
+      content: '▾';
+      margin-left: 8px;
+      font-size: 0.8em;
+      opacity: 0.9;
+    }
+
     .dropdown .dropdown-list {
       opacity: 0;
       visibility: hidden;
@@ -24,26 +50,42 @@
       position: absolute;
       top: calc(100% + 6px);
       left: 0;
-      background: #0275d8; /* match header */
+      background: #0275d8;
+      /* match header */
       list-style: none;
       margin: 0;
       padding: 6px 0;
       border: 1px solid #0262b0;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       min-width: 220px;
       z-index: 100;
       pointer-events: none;
       border-radius: 6px;
     }
-    .dropdown .dropdown-list li { padding: 6px 12px; white-space: nowrap; }
-    .dropdown .dropdown-list li a { color: #fff; text-decoration: none; display: block; }
-    .dropdown:hover .dropdown-list, .dropdown.open .dropdown-list, .dropdown:focus-within .dropdown-list {
+
+    .dropdown .dropdown-list li {
+      padding: 6px 12px;
+      white-space: nowrap;
+    }
+
+    .dropdown .dropdown-list li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-list,
+    .dropdown.open .dropdown-list,
+    .dropdown:focus-within .dropdown-list {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
       pointer-events: auto;
     }
-    .dropdown .dropdown-list li a:hover { background: rgba(0,0,0,0.08); }
+
+    .dropdown .dropdown-list li a:hover {
+      background: rgba(0, 0, 0, 0.08);
+    }
 
     @media (max-width: 768px) {
       .dropdown .dropdown-list {
@@ -57,23 +99,28 @@
       }
     }
   </style>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(99187225, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/99187225" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(99187225, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/99187225" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
+
 <body>
   <header id="header">
     <nav>
@@ -82,15 +129,18 @@
       <div class="dropdown">
         <span tabindex="0"><b>Onlayn Python İntepretatoru</b></span>
         <ul class="dropdown-list">
-          <li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Programiz — Online Compiler</a></li>
-          <li><a href="https://toolpix.pythonanywhere.com/free-online-ai-python-compiler" target="_blank">ToolPix — AI Python Compiler</a></li>
-          <li><a href="https://pythonsandbox.io/" target="_blank">PythonSandbox.io</a></li>
+          <li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Programiz — Online
+              Compiler</a></li>
+          <li><a href="https://toolpix.pythonanywhere.com/free-online-ai-python-compiler" target="_blank">ToolPix — AI
+              Python Compiler</a></li>
+          <li><a href="https://python-playground.com/python-sandbox" target="_blank">Python Playground — Sandbox</a>
+          </li>
           <li><a href="https://codapi.org/python/" target="_blank">CodAPI — Python</a></li>
         </ul>
       </div>
     </nav>
   </header>
-  
+
   <main class="grid-container">
     <div>
       <a href="https://e-derslik.edu.az/player/index3.php?book_id=417" target="_blank">
@@ -103,79 +153,71 @@
       </a>
     </div>
     <div>
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=676" target="_blank">
-		<img src="./Informatika-3/assets/img/page1/1.jpg" alt="Informatika 3"/></a>
-      </div>
-	
-  <div>
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=676" target="_blank">
+        <img src="./Informatika-3/assets/img/page1/1.jpg" alt="Informatika 3" /></a>
+    </div>
+
+    <div>
       <a href="https://e-derslik.edu.az/player/index3.php?book_id=360" target="_blank">
         <img src="./Informatika-4/assets/img/page1/1.jpg" alt="Informatika 4" />
       </a>
     </div>
 
- <div>
+    <div>
       <a href="https://e-derslik.edu.az/player/index3.php?book_id=846" target="_blank">
         <img src="./Informatika-5/cover1.jpg" alt="Informatika 5" />
       </a>
     </div>
 
-      <div >
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=550" target="_blank"
-          ><img src="./Informatika-6/cover.jpg" alt="Informatika 6"
-        /></a>
-      </div>
-      <div>
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=708" target="_blank"
-          ><img src="./Informatika-7/cover.jpg" alt="Informatika 7"
-        /></a>
-      </div>
-      <div>
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=797" target="_blank"
-          ><img
-            src="./Informatika-8/assets/img/page1/1.jpg" alt="Informatika 8"
-        /></a>
-      </div>
-      <div>
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=884" target="_blank"
-          ><img src="./Informatika-9/cover9yeni.jpg" alt="Informatika 9"
-        /></a>
-      </div>
-      <div class="">
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=736" target="_blank"
-          ><img
-            src="./Informatika-10/cover.jpg" alt="Informatika 10"
-        /></a>
-      </div>
-      <div class="">
-        <a href="https://e-derslik.edu.az/player/index3.php?book_id=822" target="_blank"
-          ><img
-            src="./Informatika-11/cover.jpg" alt="Informatika 11"
-        /></a>
-      </div>
+    <div>
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=550" target="_blank"><img
+          src="./Informatika-6/cover.jpg" alt="Informatika 6" /></a>
+    </div>
+    <div>
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=708" target="_blank"><img
+          src="./Informatika-7/cover.jpg" alt="Informatika 7" /></a>
+    </div>
+    <div>
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=797" target="_blank"><img
+          src="./Informatika-8/assets/img/page1/1.jpg" alt="Informatika 8" /></a>
+    </div>
+    <div>
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=884" target="_blank"><img
+          src="./Informatika-9/cover9yeni.jpg" alt="Informatika 9" /></a>
+    </div>
+    <div class="">
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=736" target="_blank"><img
+          src="./Informatika-10/cover.jpg" alt="Informatika 10" /></a>
+    </div>
+    <div class="">
+      <a href="https://e-derslik.edu.az/player/index3.php?book_id=822" target="_blank"><img
+          src="./Informatika-11/cover.jpg" alt="Informatika 11" /></a>
+    </div>
   </main>
-  
+
   <footer>
     <p>© 2024 İnformatika Dərslikləri - Bütün hüquqlar qorunur.</p>
   </footer>
 </body>
+
 </html>
 
 <script>
-  (function(){
+  (function () {
     var dd = document.querySelector('.dropdown');
-    if(!dd) return;
+    if (!dd) return;
     // toggle on click/tap
-    dd.addEventListener('click', function(e){
+    dd.addEventListener('click', function (e) {
       this.classList.toggle('open');
       e.stopPropagation();
     });
     // close when clicking outside
-    document.addEventListener('click', function(){
+    document.addEventListener('click', function () {
       dd.classList.remove('open');
     });
     // close on escape
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') dd.classList.remove('open');
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') dd.classList.remove('open');
     });
   })();
 </script>
